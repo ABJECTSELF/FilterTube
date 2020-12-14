@@ -1,2 +1,2 @@
 # FilterTube
-FilterTube is a webtoy that allows you to add live effects to any YouTube video you like.
+FilterTube is a Javascript webtoy that allows you to add live effects to any YouTube video you like.
