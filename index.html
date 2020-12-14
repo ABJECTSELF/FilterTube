@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>FilterTube - YouTube with Style</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Jonathan Cwiok">
+  <link rel="stylesheet" href="main.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<!--Javascript-->
+<script src="app.js"></script>
+<!-- Video container -->
+<body class="text-center" onload="setTimeout(function(){removeTip('tipStart')}, 5000)">
+  <div class="video-background">
+    <div class="video-foreground" id="video"></div>
+  </div>
+  <!-- Filter controls -->
+  <div class="topScreen" id="topScreen" onmouseenter="toggleMenu()" onmouseleave="toggleMenu()">
+    <div class="menu">
+      <form class="slider-column">
+        <div class="slider-container">
+          <input type="checkbox" id="brightness" onchange="setFilter()">
+          <span class="cusBox" onclick="document.getElementById('brightness').click();"></span>
+          <label for="brightness">Brightness</label>
+        </div>
+        <input type="range" class="slider" id="form_brightness" name="brightness" onmousemove="setFilter()">
+        <div class="slider-container">
+          <input type="checkbox" id="contrast" onchange="setFilter()">
+          <span class="cusBox" onclick="document.getElementById('contrast').click();"></span>
+          <label for="contrast">Contrast</label>
+        </div>
+        <input type="range" class="slider" id="form_contrast" name="contrast" onmousemove="setFilter()">
+      </form>
+      <form class="slider-column">
+        <div class="slider-container">
+          <input type="checkbox" id="saturate" onchange="setFilter()">
+          <span class="cusBox" onclick="document.getElementById('saturate').click();"></span>
+          <label for="saturate">Saturate</label>
+        </div>
+        <input type="range" class="slider" id="form_saturate" name="saturate" onmousemove="setFilter()">
+        <div class="slider-container">
+          <input type="checkbox" id="blur" onchange="setFilter()">
+          <span class="cusBox" onclick="document.getElementById('blur').click();"></span>
+          <label for="blur">Blur</label>
+        </div>
+        <input type="range" class="slider" id="form_blur" name="blur" onmousemove="setFilter()">
+      </form>
+      <form class="slider-column">
+        <div class="slider-container">
+          <input type="checkbox" id="sepia" onchange="setFilter()">
+          <span class="cusBox" onclick="document.getElementById('sepia').click();"></span>
+          <label for="sepia">Sepia</label>
+        </div>
+        <input type="range" class="slider" id="form_sepia" name="sepia" onmousemove="setFilter()">
+        <div class="slider-container">
+          <input type="checkbox" id="invert" onchange="setFilter()">
+          <span class="cusBox" onclick="document.getElementById('invert').click();"></span>
+          <label for="shadow">Invert</label>
+        </div>
+        <input type="range" class="slider" id="form_invert" name="invert" onmousemove="setFilter()">
+      </form>
+      <form class="slider-column">
+        <div class="slider-container">
+          <input type="checkbox" id="hue" onchange="setFilter()">
+          <span class="cusBox" onclick="document.getElementById('hue').click();"></span>
+          <label for="hue">Hue</label>
+        </div>
+        <input type="range" class="slider" id="form_hue" name="hue" onmousemove="setFilter()">
+        <div class="playButtons">
+          <i class="fas fa-play" onclick="pausePlay()" id="button_play"></i>
+          <i class="fas fa-volume-up" onclick="setMute()" id="button_mute"></i>
+        </div>
+      </form>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a class="brand">FilterTube</a>
+      <form onmouseover="showTip('tipURL')" onmouseleave="removeTip('tipURL')">
+        <label for="vid_id">www.youtube.com/watch?v=</label>
+        <input type="vid_id" placeholder="6W-A2GXrM5w" id="vid_id" onchange="setURL()">
+      </form>
+      <button class="navbar-toggler" id="navbar-toggler" type="button"">
+        <span class="fas fa-angle-double-down"></span>
+      </button>
+    </nav>
+  </div>
+
+  <!--Tooltips-->
+  <div class="tipStart" id="tipStart">
+    <p>FilterTube is best viewed in fullscreen (Press F11)</p>
+  </div>
+  <div class="tipURL" id="tipURL">
+    <p>Copy and paste a Youtube video code here.</p><br><p>Ex: https://www.youtube.com/watch?v=<b style="color:cyan">6W-A2GXrM5w</b></p>
+  </div>
+
+  <!--Footer-->
+  <footer>
+    <div>
+      <div class="footer-container">
+        <p>A webtoy by <a href="https://www.linkedin.com/in/jonathan-cwiok-27499611b/">Jonathan Cwiok</a> &copy 2020</p>
+      </div>
+    </div>
+    <div class="footer-container">
+      <p>Default Video: <a href="https://honestlyitsyou.com/">Honestly</a> - Hell</p>
+      <p>View source code at <a href="https://codepen.io/BoredRobot/pen/OJVZZyj"><i class="fab fa-codepen"></a></i> <i class="fab fa-github"></i></p>
+      <p>Having fun? <a href="https://streamlabs.com/anarchyorchestra/tip">Consider donating!</a></p>
+    </div>  
+  </footer>
+</body>
+
+</html>

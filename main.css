@@ -1,0 +1,226 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Gruppo", cursive;
+  letter-spacing: 2px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+}
+
+a {
+  color: cyan;
+  text-decoration: none;
+}
+
+.topScreen {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: -130px;
+  /*top:-135px;*/
+  background-color: rgba(39, 47, 54, 0.5);
+  transform: translateY(0px);
+  transition: transform 0.2s ease-in-out;
+}
+
+.menu {
+  margin-top: 1.1em;
+  width: 100%;
+  color: #55ecfa;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 75%;
+  height: 20px;
+  background: #004452;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border: 0.1em solid #222;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 20px;
+  background: #55ecfa;
+  cursor: pointer;
+}
+
+.slider-container {
+  display: flex;
+}
+
+.slider-container input {
+  opacity: 0;
+  width: 1.5em;
+  height: 1.5em;
+  pointer-events: auto;
+}
+
+.slider-container:hover input ~ .cusBox {
+  background-color: #526b6e;
+}
+
+.slider-container input:checked ~ .cusBox {
+  background-color: #55ecfa;
+}
+
+.slider-column {
+  width: 50%;
+}
+
+.cusBox {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+  left: -5px;
+  height: 14px;
+  width: 14px;
+  border-radius: 0.25em;
+  border: 0.1em solid currentColor;
+  background-color: rgba(39, 47, 54, 0.5);
+}
+
+.playButtons {
+  cursor: pointer;
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 1.25rem 4rem 0px;
+  font-size: 1.5rem;
+}
+
+.navbar {
+  color: white;
+  font-size:1.15rem;
+  display: flex;
+  justify-content: space-between;
+  height: 2rem;
+  margin: 1.1em 1.05em;
+}
+
+.navbar input {
+  background-color: rgba(39, 47, 54, 0.75);
+  color: white;
+  border: 1px solid rgba(39, 47, 54, 0.5);
+}
+
+.navbar-toggler {
+  background-color: rgba(0, 0, 0, 0);
+  color: #55ecfa;
+  border: none;
+  font-size: 1.4rem;
+  transform: rotate(0deg);
+  transition: transform 0.4s ease-in-out;
+}
+
+.brand {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.tipStart, .tipURL{
+  position:absolute;
+  text-align:center;
+  background-color: rgba(39, 47, 54, 1);
+  color: white;
+  border: 0.1em solid  #55ecfa;  
+  transition: opacity 1s;
+}
+
+.tipStart{
+  top:50%;
+  left:40%;
+  width:20%;  
+}
+
+.tipURL{
+  top:20%;
+  left:35%;
+  width:30%; 
+  opacity:0%;
+  line-height:25%;
+}
+
+footer {
+  position: fixed;
+  text-align: center;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  color: white;
+  background-color: rgba(39, 47, 54, 0.5);
+}
+
+.footer-container{
+  display:flex;
+  justify-content: space-around;
+}
+
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -99;
+}
+
+.video-foreground,
+.video-background,
+.video-background iframe {
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  /*pointer-events: none;*/
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .vid-info {
+    width: 50%;
+    padding: 0.5rem;
+  }
+  .vid-info h1 {
+    margin-bottom: 0.2rem;
+  }
+}
+@media all and (max-width: 500px) {
+  .vid-info .acronym {
+    display: none;
+  }
+}
