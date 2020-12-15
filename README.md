@@ -1,7 +1,7 @@
 ![FilterTube](https://user-images.githubusercontent.com/29738422/102203133-3202e880-3e96-11eb-81cb-70d353e13c89.jpg)<br>
 FilterTube is a Javascript webtoy that allows you to add live effects to any YouTube video you like.
 
-  This is a simple webtoy that demonstrates how to
+  This is a simple interface that demonstrates how to
   alter full-screen CSS filters in real-time 
   using javascript as well as implementing custom 
   sliders and a motion-activated menu and footer.
