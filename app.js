@@ -1,5 +1,6 @@
 var player;
 var menuActive = false;
+var footerActive = false;
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("video", {
@@ -13,15 +14,18 @@ function onYouTubeIframeAPIReady() {
       loop: true,
       autoplay: true,
       enablejsapi: true,
+      controls: 0,
+      showinfo: 0,
+      rel: 0,
       fs: 0
     },
     events: {
-      onReady: play
+      //onReady: play,
+      onStateChange: setSplash
     }
   });
   //player.setLoop();
 }
- 
 
 function play() {
   player.playVideo();
@@ -31,6 +35,15 @@ function play() {
 function pause() {
   player.pauseVideo();
   document.getElementById("button_play").className = "fas fa-play";
+}
+
+function setSplash(state){
+    var splash = document.getElementById("splash");
+    console.log(state);
+    if (state.data == YT.PlayerState.PLAYING || state.data == YT.PlayerState.PAUSED)
+        splash.style.display = "none";
+    else
+        splash.style.display = "block";    
 }
 
 function pausePlay() {
@@ -118,8 +131,8 @@ function toggleMenu(){
   var button = document.getElementById("navbar-toggler");
   menuActive = !menuActive;
   if (menuActive){
-    menu.style.transform = "translateY(130px)";
-    menu.style.backgroundColor = "rgba(28, 36, 41, 0.75)";
+    menu.style.transform = "translateY(150px)";
+    menu.style.backgroundColor = "rgba(28, 36, 41, 0.8)";
     button.style.transform = "rotate(180deg)";
   }
   else{
@@ -128,6 +141,19 @@ function toggleMenu(){
     button.style.transform = "rotate(0deg)";
   }
 }
+
+function toggleFooter(){
+    var menu = document.getElementById("footer");
+    menuActive = !menuActive;
+    if (menuActive){
+      menu.style.transform = "translateY(-50px)";
+      menu.style.backgroundColor = "rgba(28, 36, 41, 0.8)";
+    }
+    else{
+      menu.style.transform = "translateY(0px)";
+      menu.style.backgroundColor = "rgba(39, 47, 54, 0.5)";
+    }
+  }
 
 function showTip(id){
   tip = document.getElementById(id);

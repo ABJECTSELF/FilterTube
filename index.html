@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+  This is a simple webtoy that demonstrates how to
+  alter full-screen CSS filters in real-time 
+  using javascript as well as implementing custom 
+  sliders and a motion-activated menu and footer.
 
+  Special thanks to codepen.io users fregante and Dudley Storey
+  for their wonderful examples on implementing the YouTube API
+  and formatting a full-video background.
+-->
 <head>
   <title>FilterTube - YouTube with Style</title>
   <meta charset="utf-8">
@@ -19,6 +28,13 @@
   <div class="video-background">
     <div class="video-foreground" id="video"></div>
   </div>
+  <!--Splash screen when video is not started.
+    Implemented because so few browsers allow AutoPlay
+    and YouTube thumbnails are ugly-->
+    <div class="splash" id="splash">
+      <h1>FilterTube</h1>
+      <p>Press <i class="fas fa-play"></i> above to start</p>
+    </div>
   <!-- Filter controls -->
   <div class="topScreen" id="topScreen" onmouseenter="toggleMenu()" onmouseleave="toggleMenu()">
     <div class="menu">
@@ -83,9 +99,9 @@
       <a class="brand">FilterTube</a>
       <form onmouseover="showTip('tipURL')" onmouseleave="removeTip('tipURL')">
         <label for="vid_id">www.youtube.com/watch?v=</label>
-        <input type="vid_id" placeholder="6W-A2GXrM5w" id="vid_id" onchange="setURL()">
+        <input type="vid_id" placeholder="6W-A2GXrM5w" id="vid_id" oninput="setURL()">
       </form>
-      <button class="navbar-toggler" id="navbar-toggler" type="button"">
+      <button class="navbar-toggler" id="navbar-toggler" type="button">
         <span class="fas fa-angle-double-down"></span>
       </button>
     </nav>
@@ -100,16 +116,16 @@
   </div>
 
   <!--Footer-->
-  <footer>
+  <footer id="footer" onmouseenter="toggleFooter()" onmouseleave="toggleFooter()">
     <div>
       <div class="footer-container">
-        <p>A webtoy by <a href="https://www.linkedin.com/in/jonathan-cwiok-27499611b/">Jonathan Cwiok</a> &copy 2020</p>
+        <p>A webtoy by <a href="https://www.linkedin.com/in/jonathan-cwiok-27499611b/" target="_blank">Jonathan Cwiok</a> &copy 2020</p>
       </div>
     </div>
     <div class="footer-container">
-      <p>Default Video: <a href="https://honestlyitsyou.com/">Honestly</a> - Hell</p>
-      <p>View source code at <a href="https://codepen.io/BoredRobot/pen/OJVZZyj"><i class="fab fa-codepen"></a></i> <i class="fab fa-github"></i></p>
-      <p>Having fun? <a href="https://streamlabs.com/anarchyorchestra/tip">Consider donating!</a></p>
+      <p>Default Video: <a href="https://honestlyitsyou.com/" target="_blank">Honestly</a> - Hell</p>
+      <p>View source code at <a href="https://codepen.io/BoredRobot/pen/OJVZZyj" target="_blank"><i class="fab fa-codepen"></a></i> <a href="https://github.com/ABJECTSELF/FilterTube" target="_blank"><i class="fab fa-github"></i></a></p>
+      <p>Having fun? <a href="https://streamlabs.com/anarchyorchestra/tip" target="_blank">Consider donating!</a></p>
     </div>  
   </footer>
 </body>
