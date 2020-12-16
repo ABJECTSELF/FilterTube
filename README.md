@@ -1,10 +1,12 @@
 ![FilterTube](https://user-images.githubusercontent.com/29738422/102203133-3202e880-3e96-11eb-81cb-70d353e13c89.jpg)<br>
-FilterTube is a Javascript webtoy that allows you to add live effects to any YouTube video you like.
-
-  This is a simple interface that demonstrates how to
-  alter full-screen CSS filters in real-time 
-  using javascript as well as implementing custom 
-  sliders and a motion-activated menu and footer.
+Watch YouTube your way!
+FilterTube is a Javascript interface that allows you to add live 
+enhancements and filters to any YouTube video you like. Viewers 
+can adjust brightness, contrast, colors and more. This allows 
+people with certain visual impairments to comfortably watch YouTube 
+videos while also being a fun webtoy for others. All you need is
+a YouTube video code and you're free to adjust the image any way
+you like.
 
   Special thanks to codepen.io users fregante and Dudley Storey
   for their wonderful examples on implementing the YouTube API
