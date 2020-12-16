@@ -35,7 +35,6 @@ a {
   width: 100%;
   left: 0;
   top: -150px;
-  /*top:-135px;*/
   background-color: rgba(39, 47, 54, 0.5);
   transform: translateY(0px);
   transition: transform 0.2s ease-in-out;
@@ -73,7 +72,7 @@ a {
 }
 
 .slider-container {
-  display: flex;
+  
 }
 
 .slider-container input {
@@ -122,6 +121,7 @@ a {
   color: white;
   font-size:1.15rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   height: 2rem;
   margin: 1.1em 1.05em;
@@ -134,10 +134,11 @@ a {
 }
 
 .navbar-toggler {
+  display:none;
   background-color: rgba(0, 0, 0, 0);
   color: #55ecfa;
   border: none;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   transform: rotate(0deg);
   transition: transform 0.4s ease-in-out;
 }
@@ -214,31 +215,74 @@ footer {
   /*pointer-events: none;*/
 }
 
-@media (min-aspect-ratio: 16/9) {
-  .video-foreground {
-    height: 300%;
-    top: -100%;
+@media (max-width: 600px){
+  .splash{
+    padding-top:50%;
+    font-size:2rem;
   }
-}
 
-@media (max-aspect-ratio: 16/9) {
-  .video-foreground {
-    width: 300%;
-    left: -100%;
+  .topScreen{
+    top:-440px;
   }
-}
 
-@media all and (max-width: 600px) {
-  .vid-info {
-    width: 50%;
-    padding: 0.5rem;
+  .menu{
+    left:1em;
+    margin: 1em 1em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+    justify-content: center;
+    font-size:.75rem;
   }
-  .vid-info h1 {
-    margin-bottom: 0.2rem;
+
+  .playButtons {
+    cursor: pointer;
+    display: flex;
+    width: 75%;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 1rem 4rem 0px;
+    font-size: 1rem;
   }
-}
-@media all and (max-width: 500px) {
-  .vid-info .acronym {
-    display: none;
+
+  .navbar, .navbar input{
+    font-size:0.75rem;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .brand{
+    display:none;
+  }
+
+  .slider {
+    width: 75%;
+  }
+
+  .slider-column {
+    width: 100%;
+  }
+
+  .cusBox {
+    
+    height: 10px;
+    width: 10px;
+  }
+  
+  .tipStart{
+    display:none;
+  }
+
+  footer{
+    bottom:0px;
+    font-size:.75em;
+    bottom: -30px;
+  }
+  footer .navbar-toggler{
+    display: block;
+    transform: rotate(180deg); 
   }
 }

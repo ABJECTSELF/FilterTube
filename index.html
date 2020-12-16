@@ -101,7 +101,7 @@
         <label for="vid_id">www.youtube.com/watch?v=</label>
         <input type="vid_id" placeholder="6W-A2GXrM5w" id="vid_id" oninput="setURL()">
       </form>
-      <button class="navbar-toggler" id="navbar-toggler" type="button">
+      <button class="navbar-toggler" id="navbar-toggler" type="button" onclick="toggleMenu()">
         <span class="fas fa-angle-double-down"></span>
       </button>
     </nav>
@@ -120,6 +120,9 @@
     <div>
       <div class="footer-container">
         <p>A webtoy by <a href="https://www.linkedin.com/in/jonathan-cwiok-27499611b/" target="_blank">Jonathan Cwiok</a> &copy 2020</p>
+        <button class="navbar-toggler" id="footer-toggler" type="button" onclick="toggleFooter()">
+          <span class="fas fa-angle-double-down"></span>
+        </button>
       </div>
     </div>
     <div class="footer-container">

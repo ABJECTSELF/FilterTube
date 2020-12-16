@@ -128,30 +128,59 @@ function setFilter() {
 
 function toggleMenu(){
   var menu = document.getElementById("topScreen");
+  var width = window.matchMedia("(max-width: 600px)");
   var button = document.getElementById("navbar-toggler");
   menuActive = !menuActive;
-  if (menuActive){
-    menu.style.transform = "translateY(150px)";
-    menu.style.backgroundColor = "rgba(28, 36, 41, 0.8)";
-    button.style.transform = "rotate(180deg)";
-  }
-  else{
-    menu.style.transform = "translateY(0px)";
-    menu.style.backgroundColor = "rgba(39, 47, 54, 0.5)";
-    button.style.transform = "rotate(0deg)";
-  }
-}
-
-function toggleFooter(){
-    var menu = document.getElementById("footer");
-    menuActive = !menuActive;
+  if (width.matches){
     if (menuActive){
-      menu.style.transform = "translateY(-50px)";
+        menu.style.transform = "translateY(440px)";
+        menu.style.backgroundColor = "rgba(28, 36, 41, 0.8)";
+        button.style.transform = "rotate(180deg)";
+      }
+      else{
+        menu.style.transform = "translateY(0px)";
+        menu.style.backgroundColor = "rgba(39, 47, 54, 0.5)";
+        button.style.transform = "rotate(0deg)";
+      }
+  }
+  else{  
+    if (menuActive){
+      menu.style.transform = "translateY(150px)";
       menu.style.backgroundColor = "rgba(28, 36, 41, 0.8)";
     }
     else{
       menu.style.transform = "translateY(0px)";
       menu.style.backgroundColor = "rgba(39, 47, 54, 0.5)";
+    }
+    } 
+}
+
+function toggleFooter(){
+    var menu = document.getElementById("footer");
+    var width = window.matchMedia("(max-width: 600px)");
+    var button = document.getElementById("footer-toggler");
+    menuActive = !menuActive;
+    if (width.matches){
+        if (menuActive){
+            menu.style.transform = "translateY(-70px)";
+            menu.style.backgroundColor = "rgba(28, 36, 41, 0.8)";
+            button.style.transform = "rotate(0deg)";
+          }
+          else{
+            menu.style.transform = "translateY(0px)";
+            menu.style.backgroundColor = "rgba(39, 47, 54, 0.5)";
+            button.style.transform = "rotate(180deg)";
+          }    
+    }
+    else{
+        if (menuActive){
+          menu.style.transform = "translateY(-50px)";
+          menu.style.backgroundColor = "rgba(28, 36, 41, 0.8)";
+        }
+        else{
+          menu.style.transform = "translateY(0px)";
+          menu.style.backgroundColor = "rgba(39, 47, 54, 0.5)";
+        }
     }
   }
 
