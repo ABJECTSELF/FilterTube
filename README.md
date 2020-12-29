@@ -12,7 +12,7 @@ you like.
   for their wonderful examples on implementing the YouTube API
   and formatting a full-video background.
   
-![Preview Image](https://user-images.githubusercontent.com/29738422/102201758-84430a00-3e94-11eb-8a79-58162e3c8f94.jpg)  
+![Preview Image](https://user-images.githubusercontent.com/29738422/103289768-f8fa6600-49b5-11eb-9598-96718bf1c75c.jpg)  
   
   ##Key features:<br>
 -Embedded YouTube video background<br>
