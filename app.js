@@ -133,7 +133,7 @@ function toggleMenu(){
   menuActive = !menuActive;
   if (width.matches){
     if (menuActive){
-        menu.style.transform = "translateY(440px)";
+        menu.style.transform = "translateY(400px)";
         menu.style.backgroundColor = "rgba(28, 36, 41, 0.8)";
         button.style.transform = "rotate(180deg)";
       }
@@ -192,4 +192,13 @@ function showTip(id){
 function removeTip(id){
   tip = document.getElementById(id);
   tip.style.opacity = "0%";
+}
+
+window.onload = function(){
+  //Replace ToolTip text if on mobile resolution.
+  tip = document.getElementById("tipStart");
+  var w = screen.width;
+  if (w < 600)
+    tip.innerHTML = "FilterTube may not function properly on some mobile devices<br>and is best experienced on PC.";
+  setTimeout(function(){removeTip('tipStart')}, 5000);
 }

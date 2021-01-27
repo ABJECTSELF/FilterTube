@@ -222,7 +222,7 @@ footer {
   }
 
   .topScreen{
-    top:-440px;
+    top:-400px;
   }
 
   .menu{
@@ -273,7 +273,8 @@ footer {
   }
   
   .tipStart{
-    display:none;
+    width:50%;
+    left:25%;
   }
 
   footer{
